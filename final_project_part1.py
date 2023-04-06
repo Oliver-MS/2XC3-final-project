@@ -1,7 +1,8 @@
 import min_heap
 import random
+from graph import Graph
 
-class DirectedWeightedGraph:
+class DirectedWeightedGraph(Graph):
 
     def __init__(self):
         self.adj = {}
