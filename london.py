@@ -20,6 +20,7 @@ def create_tube_graph():
     #the following are for testing and can be removed later:
     print(f"number of nodes: {tube_graph.get_num_of_nodes()}")
     print(f"weight between Charing Cross and Embankment (between 100m and 150m IRL): {calc_dist(coords[49], coords[87])}")
+    return tube_graph
             
 def calc_dist(p1, p2) -> float:
     return math.sqrt((p1[0] - p2[0]) ** 2 + (p1[1] - p2[1]) ** 2)
