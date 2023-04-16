@@ -94,6 +94,15 @@ def create_random_complete_graph(n,upper):
                 G.add_edge(i,j,random.randint(1,upper))
     return G
 
+def create_random_weighted_graph(n, upper, d):
+    G = DirectedWeightedGraph()
+    for i in range(n):
+        G.add_node(i)
+    for i in range(n):
+        for j in range(n):
+            if i != j and random.random() < d:
+                G.add_edge(i, j, random.randint(1, upper))
+    return G
 
 #Assumes G represents its nodes as integers 0,1,...,(n-1)
 def mystery(G):
