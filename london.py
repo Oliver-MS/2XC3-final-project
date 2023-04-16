@@ -1,17 +1,17 @@
 import csv
 import math
 from heuristic_graph import HeuristicGraph
-
+coords = {}
 def create_tube_graph():
     tube_graph = HeuristicGraph()
     #coords = {station id: [latitude, longitude]}
-    coords = {}
-    with open('final_project/csv_files/london_stations.csv', mode='r') as csvfile:
+    
+    with open('csv_files/london_stations.csv', mode='r') as csvfile:
         tube_reader = csv.DictReader(csvfile)
         for line in tube_reader:
             tube_graph.add_node(int(line['id']))
             coords[int(line['id'])] = [float(line['latitude']), float(line['longitude'])]
-    with open('final_project/csv_files/london_connections.csv', mode='r') as csvfile:
+    with open('csv_files/london_connections.csv', mode='r') as csvfile:
         connect_reader = csv.DictReader(csvfile)
         for line in connect_reader:
             s1 = int(line['station1'])
@@ -24,6 +24,15 @@ def create_tube_graph():
             
 def calc_dist(p1, p2) -> float:
     return math.sqrt((p1[0] - p2[0]) ** 2 + (p1[1] - p2[1]) ** 2)
-            
-            
-create_tube_graph()
+
+def get_h(G, t):
+    to_return={}
+    for node in G.adj.keys():
+        to_return[node] = calc_dist(coords[node], coords[t])
+    return to_return
+
+#testing
+s = create_tube_graph()
+h = get_h(s, 49)
+for test in h:
+    print("Station: " + str(test) + " Distance: " + str(h[test]))
