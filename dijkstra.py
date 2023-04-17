@@ -1,5 +1,4 @@
 from sp_algorithm import SPAlgorithm
-from graph import Graph
 import min_heap
 #interesting question: does each implementation of SPAlgorithm have to import Graph or is there a fix to this?
 
