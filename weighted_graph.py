@@ -4,6 +4,9 @@ class WeightedGraph(Graph):
 
     def __init__(self):
         super().__init__()
+        
+    def get_nodes(self):
+        return self.adj
     
     def get_adj_nodes(self, node:int):
         return self.adj[node]
