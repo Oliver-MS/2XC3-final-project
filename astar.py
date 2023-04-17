@@ -34,4 +34,4 @@ class A_Star(SPAlgorithm):
         while path[-1] != s:
             path.append(pred[path[-1]])
         path.reverse()
-        return pred, path
+        return dist[d]
