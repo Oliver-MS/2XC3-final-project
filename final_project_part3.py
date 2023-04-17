@@ -6,7 +6,9 @@ import pickle
 from final_project_part1 import *
 from final_project_part2 import *
 from matplotlib import pyplot as plt
+import astar
 import time
+import short_path_finder
 alldata=[]
 #slightly modified dijkstra's to include destination and return shortest path for ease of comparison
 def dijkstra(G, source, dest):
@@ -56,6 +58,8 @@ dijkstra_times=[]
 a_paths=[]
 d_paths=[]
 pairsC=[]
+a_star_t = short_path_finder.ShortPathFinder(graph, astar)
+test = a_star_t.calc_short_path(1, 15)
 counter=0
 for p in pairs:
 
