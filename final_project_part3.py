@@ -58,7 +58,8 @@ dijkstra_times=[]
 a_paths=[]
 d_paths=[]
 pairsC=[]
-a_star_t = short_path_finder.ShortPathFinder(graph, astar)
+astaralgo = astar.A_Star()
+a_star_t = short_path_finder.ShortPathFinder(graph, astaralgo)
 test = a_star_t.calc_short_path(1, 15)
 counter=0
 for p in pairs:
