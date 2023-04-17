@@ -2,11 +2,11 @@ from sp_algorithm import SPAlgorithm
 import min_heap
 #interesting question: does each implementation of SPAlgorithm have to import Graph or is there a fix to this?
 
-class Dijkstra(SPAlgorithm):
+class A_Star(SPAlgorithm):
     #this super needs fixing FYI
-    def calc_sp(G, source, dest):
-        pred = {} #Predecessor dictionary
-        dist = {} #Distance dictionary
+    def calc_sp(G, s, d, h):
+        pred = {}
+        dist = {}
         Q = min_heap.MinHeap([])
         nodes = list(G.adj.keys())
 
@@ -14,22 +14,24 @@ class Dijkstra(SPAlgorithm):
         for node in nodes:
             Q.insert(min_heap.Element(node, float("inf")))
             dist[node] = float("inf")
-        Q.decrease_key(source, 0)
+        Q.decrease_key(s, 0)
 
         #Meat of the algorithm
         while not Q.is_empty():
             current_element = Q.extract_min()
             current_node = current_element.value
-            dist[current_node] = current_element.key
+            if current_node == d:
+                break
+            dist[current_node] = current_element.key - h[current_node]
             for neighbour in G.adj[current_node]:
                 if dist[current_node] + G.w(current_node, neighbour) < dist[neighbour]:
-                    Q.decrease_key(neighbour, dist[current_node] + G.w(current_node, neighbour))
+                    Q.decrease_key(neighbour, dist[current_node] + G.w(current_node, neighbour) + h[neighbour])
                     dist[neighbour] = dist[current_node] + G.w(current_node, neighbour)
-                    pred[neighbour] = current_node # add/update predecessor
-        if dest not in pred:
+                    pred[neighbour] = current_node
+        if d not in pred:
             return None, None
-        path = [dest]
-        while path[-1] != source:
+        path = [d]
+        while path[-1] != s:
             path.append(pred[path[-1]])
         path.reverse()
         return pred, path
