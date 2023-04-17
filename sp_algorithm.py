@@ -6,6 +6,6 @@ class SPAlgorithm(ABC):
     #unsure if this needs an init function
     
     @abstractmethod
-    def calc_sp(graph:Graph, source:int, dest:int) -> float:
+    def calc_sp(self, graph:Graph, source:int, dest:int) -> float:
         pass
         

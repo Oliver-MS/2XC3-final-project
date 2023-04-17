@@ -1,9 +1,11 @@
 import csv
 import math
 from heuristic_graph import HeuristicGraph
+
 coords = {}
 lines = {}
-def create_tube_graph():
+
+def create_tube_graph() -> HeuristicGraph:
     tube_graph = HeuristicGraph()
     #coords = {station id: [latitude, longitude]}
     

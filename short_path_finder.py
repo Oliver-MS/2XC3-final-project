@@ -9,7 +9,7 @@ class ShortPathFinder():
         self.graph = g
         
     def calc_short_path(self, source:int, dest:int) -> float:
-        return self.algorithm.calc_sp(source, dest)
+        return self.algorithm.calc_sp(self.graph, source, dest)
     
     def set_graph(self, g:Graph):
         self.graph = g
