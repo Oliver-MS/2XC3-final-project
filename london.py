@@ -1,5 +1,6 @@
 import csv
 import math
+
 from heuristic_graph import HeuristicGraph
 
 coords = {}

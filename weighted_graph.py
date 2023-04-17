@@ -1,5 +1,6 @@
 from graph import Graph
 
+
 class WeightedGraph(Graph):
 
     def __init__(self):

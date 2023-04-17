@@ -1,5 +1,5 @@
-from sp_algorithm import SPAlgorithm
 from graph import Graph
+from sp_algorithm import SPAlgorithm
 
 
 class ShortPathFinder():

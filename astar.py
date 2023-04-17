@@ -1,5 +1,6 @@
-from sp_algorithm import SPAlgorithm
 import min_heap
+from sp_algorithm import SPAlgorithm
+
 #interesting question: does each implementation of SPAlgorithm have to import Graph or is there a fix to this?
 
 class A_Star(SPAlgorithm):

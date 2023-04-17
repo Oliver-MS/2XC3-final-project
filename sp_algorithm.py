@@ -1,5 +1,7 @@
-from graph import Graph
 from abc import ABC, abstractmethod
+
+from graph import Graph
+
 
 #ABC inheritance specifies abstract class
 class SPAlgorithm(ABC):

@@ -1,6 +1,7 @@
 import min_heap
 from graph import Graph
 
+
 def a_star(G, s, d, h):
     pred = {}
     dist = {}

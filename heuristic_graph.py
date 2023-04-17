@@ -1,5 +1,6 @@
 from weighted_graph import WeightedGraph
 
+
 #I don't think this is right but idrk what I'm doing
 class HeuristicGraph(WeightedGraph):
     

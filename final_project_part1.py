@@ -1,6 +1,8 @@
-import min_heap
 import random
+
+import min_heap
 from graph import Graph
+
 
 class DirectedWeightedGraph(Graph):
 
