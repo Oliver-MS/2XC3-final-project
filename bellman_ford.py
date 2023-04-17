@@ -28,4 +28,4 @@ class Bellman_Ford(SPAlgorithm):
         while path[-1] != source:
             path.append(pred[path[-1]])
         path.reverse()
-        return pred, path
+        return dist[dest]
